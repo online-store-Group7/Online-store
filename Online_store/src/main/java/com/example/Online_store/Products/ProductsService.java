@@ -20,4 +20,9 @@ public class ProductsService {
         return productsRepository.findAll();
     }
 
+    // get single product by id
+    public Products getProduct(String id){
+        Integer product_id = Integer.parseInt(id);
+        return productsRepository.findById(product_id).orElse(null);
+    }
 }
