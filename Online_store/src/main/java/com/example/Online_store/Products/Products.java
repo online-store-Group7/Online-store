@@ -1,20 +1,25 @@
 package com.example.Online_store.Products;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
-//@Entity
-//@Table(name = "products")
+@Entity
+@Table(name = "products")
 public class Products {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int product_id;
-    private String title;
+    private String title; //@Column(unique = true)
     private double price;
     private String description;
     private int category_id;
     private String image;
     private double rating;
+
+    public Products() {
+    }
 
     public Products(int product_id, String title, double price, String description, int category_id, String image, double rating) {
 

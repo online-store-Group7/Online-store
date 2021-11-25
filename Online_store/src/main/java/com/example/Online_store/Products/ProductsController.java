@@ -1,5 +1,6 @@
 package com.example.Online_store.Products;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +12,16 @@ import java.util.List;
 @RequestMapping(path = "products")
 public class ProductsController {
 
-//    @GetMapping
-//    public List<Products> getAllProducts(){
-//        return ProductsService.getAllProducts();
-//    }
+    private final ProductsService productsService;
 
-//    @GetMapping("/{id}")
-//    public Products getProduct(@PathVariable String id){
-//        return ProductsService.getProduct(id);
-//    }
+    @Autowired
+    public ProductsController(ProductsService productsService) {
+        this.productsService = productsService;
+    }
+
+    @GetMapping
+    public List<Products> getAllProducts(){
+        return productsService.getAllProducts();
+    }
+
 }
