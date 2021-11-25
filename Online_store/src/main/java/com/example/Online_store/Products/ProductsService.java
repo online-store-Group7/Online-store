@@ -25,4 +25,18 @@ public class ProductsService {
         Integer product_id = Integer.parseInt(id);
         return productsRepository.findById(product_id).orElse(null);
     }
+
+    // update product
+    public void updateProduct(String id, Products data){
+        Integer product_id = Integer.parseInt(id);
+        Products product = productsRepository.findById(product_id).orElse(null);
+        if (product != null){
+            product.setTitle(data.getTitle());
+            product.setPrice(data.getPrice());
+            product.setDescription(data.getDescription());
+            product.setImage(data.getImage());
+            product.setRating(data.getRating());
+            productsRepository.save(product);
+        }
+    }
 }
