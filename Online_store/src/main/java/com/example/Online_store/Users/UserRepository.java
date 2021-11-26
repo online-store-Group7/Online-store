@@ -1,7 +1,7 @@
-package com.example.Online_store.Reviews;
+package com.example.Online_store.Users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ReviewsRepository extends JpaRepository<Reviews, Integer> { }
+public interface UserRepository extends JpaRepository<User, Integer> { }
