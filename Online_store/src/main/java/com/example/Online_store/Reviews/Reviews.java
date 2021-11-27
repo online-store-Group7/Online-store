@@ -1,30 +1,32 @@
 package com.example.Online_store.Reviews;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
+@Table(name = "reviews")
 public class Reviews {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int comment_id;
     private int User_id;
     private int Product_id;
     private String comment;
     private double rating;
-    private String Date;
+    private String date;
+
 
     public Reviews() {
     }
 
-    public Reviews(int comment_id, int user_id, int product_id, String comment, double rating, String date) {
+    public Reviews(int comment_id, int user_id, int product_id, String comment, double rating, String Date) {
         this.comment_id = comment_id;
         User_id = user_id;
         Product_id = product_id;
         this.comment = comment;
         this.rating = rating;
-        Date = date;
+        date = Date;
     }
 
     public int getComment_id() {
@@ -68,10 +70,10 @@ public class Reviews {
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDate(String Date) {
+        date = Date;
     }
 }

@@ -1,3 +1,4 @@
+
 --
 -- Database: `online_store`
 --
@@ -36,7 +37,7 @@ CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `User_id` int(11) NOT NULL,
   `Product_id` int(11) NOT NULL,
-  `order_date` date DEFAULT NULL
+  `order_date` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -93,7 +94,7 @@ CREATE TABLE `reviews` (
   `Product_id` int(11) NOT NULL,
   `comment` varchar(100) DEFAULT NULL,
   `rating` decimal(2,1) DEFAULT NULL,
-  `date` date DEFAULT NULL
+  `date` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -104,7 +105,7 @@ CREATE TABLE `reviews` (
 
 CREATE TABLE `users` (
   `User_id` int(11) NOT NULL,
-  `UserName` varchar(255) DEFAULT NULL,
+  `User_Name` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Phone` int(11) DEFAULT NULL,
   `Password` varchar(100) DEFAULT NULL
@@ -114,7 +115,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`User_id`, `UserName`, `Email`, `Phone`, `Password`) VALUES
+INSERT INTO `users` (`User_id`, `User_Name`, `Email`, `Phone`, `Password`) VALUES
 (0, 'ADMIN', 'ADMIN@ADMIN.com', 500000000, '1122');
 
 -- --------------------------------------------------------
@@ -254,5 +255,4 @@ ALTER TABLE `reviews`
 ALTER TABLE `users_rules`
   ADD CONSTRAINT `users_rules_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `users` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
 
