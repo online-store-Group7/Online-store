@@ -1,13 +1,14 @@
 package com.example.Online_store.Users;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int User_id;
     private String UserName;
     private String Email;
