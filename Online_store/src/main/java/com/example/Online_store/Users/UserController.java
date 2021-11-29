@@ -1,6 +1,7 @@
 package com.example.Online_store.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class UserController {
     public void delUser(@PathVariable String id){
          userService.deleteUser(id);
     }
+
 
     @PutMapping("/{id}")
     public void updateUser(@PathVariable String id, @RequestBody User data){

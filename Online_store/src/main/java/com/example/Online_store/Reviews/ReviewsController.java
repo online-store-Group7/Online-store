@@ -24,10 +24,10 @@ public class ReviewsController {
     }
 
     @PostMapping
-    public void addReview(@RequestBody Reviews reviews){
-         reviewsService.addReviews(reviews);
-    }
+    public void addReview(@RequestBody Form form){
 
+        reviewsService.addReviews(form.getA(), form.getUser_id(), form.getProduct_id());
+    }
 
 
     @GetMapping("/{id}")
@@ -38,6 +38,26 @@ public class ReviewsController {
     @DeleteMapping("/{id}")
     public void delReview(@PathVariable String id){
          reviewsService.deleteReviews(id);
+    }
+
+
+}
+
+class Form{
+    private Reviews a;
+    private int user_id;
+    private int product_id;
+
+
+    public Reviews getA() {
+        return a;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+    public int getProduct_id() {
+        return product_id;
     }
 
 
