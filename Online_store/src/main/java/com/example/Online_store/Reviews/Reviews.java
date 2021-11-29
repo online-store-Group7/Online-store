@@ -1,5 +1,8 @@
 package com.example.Online_store.Reviews;
 
+import com.example.Online_store.Products.Products;
+import com.example.Online_store.Users.User;
+
 import javax.persistence.*;
 
 
@@ -10,23 +13,35 @@ public class Reviews {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int comment_id;
-    private int User_id;
-    private int Product_id;
     private String comment;
     private double rating;
     private String date;
 
+    @ManyToOne(fetch = FetchType.EAGER,optional = true)
+    @JoinColumn(name = "User_id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER,optional = true)
+    @JoinColumn(name = "Product_id")
+    private Products products;
 
     public Reviews() {
     }
 
-    public Reviews(int comment_id, int user_id, int product_id, String comment, double rating, String Date) {
+    public Reviews(int comment_id, int user_id, int product_id, String comment, double rating, String date, User user) {
         this.comment_id = comment_id;
-        User_id = user_id;
-        Product_id = product_id;
         this.comment = comment;
         this.rating = rating;
-        date = Date;
+        this.date = date;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getComment_id() {
@@ -37,20 +52,12 @@ public class Reviews {
         this.comment_id = comment_id;
     }
 
-    public int getUser_id() {
-        return User_id;
+    public Products getProducts() {
+        return products;
     }
 
-    public void setUser_id(int user_id) {
-        User_id = user_id;
-    }
-
-    public int getProduct_id() {
-        return Product_id;
-    }
-
-    public void setProduct_id(int product_id) {
-        Product_id = product_id;
+    public void setProducts(Products products) {
+        this.products = products;
     }
 
     public String getComment() {
