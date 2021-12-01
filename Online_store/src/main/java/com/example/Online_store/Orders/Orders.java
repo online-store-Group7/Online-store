@@ -1,9 +1,9 @@
 package com.example.Online_store.Orders;
 
 import com.example.Online_store.Products.Products;
+import com.example.Online_store.Users.User;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "orders")
@@ -12,19 +12,22 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int order_id;
 
-    @Temporal(TemporalType.DATE)
-    Date date = new Date(System.currentTimeMillis());
+    private String order_date;
 
     @ManyToOne(fetch = FetchType.EAGER,optional = true)
     @JoinColumn(name = "product_id")
     private Products products;
 
+    @ManyToOne(fetch = FetchType.EAGER,optional = true)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Orders() {
     }
 
-    public Orders(int order_id, Date date, Products products) {
+    public Orders(int order_id, String date, Products products) {
         this.order_id = order_id;
-        this.date = date;
+        this.order_date = date;
         this.products = products;
     }
 
@@ -36,12 +39,12 @@ public class Orders {
         this.order_id = order_id;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return order_date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String date) {
+        this.order_date = date;
     }
 
     public Products getProducts() {
@@ -52,11 +55,21 @@ public class Orders {
         this.products = products;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Orders{" +
                 "order_id=" + order_id +
-                ", date=" + date +
+                ", date='" + order_date + '\'' +
+                ", products=" + products +
+                ", user=" + user +
                 '}';
     }
 }

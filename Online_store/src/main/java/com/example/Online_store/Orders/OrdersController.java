@@ -22,13 +22,20 @@ public class OrdersController {
 
     @PostMapping
     public Orders addOrder(@RequestBody Form form) {
-        return orderService.saveOrder(form.getOrder(), form.getProductId());
+        return orderService.saveOrder(form.getOrder(), form.getProductId(), form.getUserId());
     }
 
 }
 class Form{
     private Orders orders;
     private Integer product_id;
+    private Integer user_id;
+
+    public Form(Orders orders, Integer product_id, Integer user_id) {
+        this.orders = orders;
+        this.product_id = product_id;
+        this.user_id = user_id;
+    }
 
     public Orders getOrder() {
         return orders;
@@ -36,5 +43,9 @@ class Form{
 
     public Integer getProductId() {
         return product_id;
+    }
+
+    public Integer getUserId(){
+        return user_id;
     }
 }
