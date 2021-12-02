@@ -30,4 +30,11 @@ public class ProductsController {
     public void updateProduct(@PathVariable String id, @RequestBody Products product){
         productsService.updateProduct(id,product);
     }
+
+    @PostMapping
+    public void addProduct(@RequestBody Products products){
+        productsService.addProduct(products);
+    }
 }
+
+

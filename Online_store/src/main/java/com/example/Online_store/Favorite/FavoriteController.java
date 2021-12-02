@@ -1,5 +1,7 @@
 package com.example.Online_store.Favorite;
 
+import com.example.Online_store.Users.User;
+import com.example.Online_store.Products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -24,10 +26,13 @@ public class FavoriteController {
     }
 
     @PostMapping
-    public Favorite addFavorite(@RequestBody Favorite favorite){ return favoriteService.addFavorite(favorite); }
+    public Favorite addFavorite(@RequestBody Products products, User user){
+        System.out.println(user.getUser_id());
+        return favoriteService.saveFavorite(products, user);}
 
     @DeleteMapping
     public void deleteFavorite(@PathVariable String id){
         favoriteService.deleteFavorite(id);
     }
 }
+

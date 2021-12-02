@@ -1,55 +1,69 @@
 package com.example.Online_store.Cart;
 
+import com.example.Online_store.Products.Products;
+import com.example.Online_store.Users.User;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "cart")
 public class Cart {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Cart_id;
-    private int User_id;
-    private int Product_id;
+
+    @ManyToMany
+    @JoinColumn(name = "product_cart",referencedColumnName = "product_id")
+    private List<Products> products = new ArrayList<>();
+
+//    @OneToOne
+//    private User user;
 
     public Cart() {
     }
 
-    public Cart(int Cart_id, int User_id, int Product_id) {
-        this.Cart_id = Cart_id;
-        this.User_id = User_id;
-        this.Product_id = Product_id;
+    public Cart(int cart_id) {
+        this.Cart_id = cart_id;
     }
 
+    public Cart(int Cart_id, List<Products> products) {
+        this.Cart_id = Cart_id;
+        this.products = products;
+//        this.user=user;
+    }
+
+//    public User getUser() {
+//        return this.user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
     public int getCart_id() {
-        return Cart_id;
+        return this.Cart_id;
     }
 
     public void setCart_id(int id) {
         this.Cart_id = Cart_id;
     }
 
-    public int getUser_id() {
-        return User_id;
+    public List<Products> getProducts() {
+        return this.products;
     }
 
-    public void setUser_id(int user_id) {
-        User_id = user_id;
-    }
-
-    public int getProduct_id() {
-        return Product_id;
-    }
-
-    public void setProduct_id(int product_id) {
-        Product_id = product_id;
+    public void setProducts(List<Products> products) {
+        this.products = products;
     }
 
     @Override
     public String toString() {
         return "Cart{" +
-                "Cart_id=" + Cart_id +
-                ", User_id=" + User_id +
-                ", Product_id=" + Product_id +
+                "Cart_id=" + this.Cart_id +
+                ", products=" + this.products +
+//                ", user=" + this.user +
                 '}';
     }
 }

@@ -1,5 +1,10 @@
 package com.example.Online_store.Favorite;
 
+import com.example.Online_store.Cart.Cart;
+import com.example.Online_store.Users.User;
+import com.example.Online_store.Products.Products;
+import com.example.Online_store.Products.ProductsRepository;
+import com.example.Online_store.Users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,22 +14,34 @@ import java.util.List;
 public class FavoriteService {
 
     private final FavoriteRepository favoriteRepository;
-
+    private final UserRepository userRepository;
+    private final ProductsRepository productsRepository;
     @Autowired
-    public FavoriteService(FavoriteRepository favoriteRepository){
+    public FavoriteService(FavoriteRepository favoriteRepository, UserRepository userRepository, ProductsRepository productsRepository){
         this.favoriteRepository = favoriteRepository;
+        this.userRepository = userRepository;
+        this.productsRepository = productsRepository;
     }
 
-    public List<Favorite> getFavorites(){ return favoriteRepository.findAll(); }
+    public List<Favorite> getFavorites(){return favoriteRepository.findAll(); }
 
     public Favorite getFavorite(String id){
         int favorite_id = Integer.valueOf(id);
         return favoriteRepository.findById(favorite_id).orElse(null);
     }
 
-    public Favorite addFavorite(Favorite favorite){
-        return favoriteRepository.save(favorite);
-    }
+    public Favorite saveFavorite(Products products, User user){
+        Favorite favorite = favoriteRepository.getById(1);
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$"+user.getUser_id());
+//        System.out.println("£££££££££££££££££££££££"+cart.getCart_id());
+//        System.out.println(products.getProduct_id());
+        Products products1 = productsRepository.findById(products.getProduct_id()).orElse(null);
+//        System.out.println(products1);
+//        System.out.println(cart.getProducts());
+        favorite.getProducts().add(products1);
+        System.out.println(user.getUser_id());
+//        cart.setUser_id(userId);
+        return favoriteRepository.save(favorite);  }
 
     public void deleteFavorite(String id){
         int favorite_id = Integer.valueOf(id);

@@ -1,4 +1,8 @@
 package com.example.Online_store.Users;
+import com.example.Online_store.Cart.Cart;
+import com.example.Online_store.Cart.CartRepository;
+import com.example.Online_store.Favorite.Favorite;
+import com.example.Online_store.Favorite.FavoriteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -8,12 +12,15 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final CartRepository cartRepository;
+    private final FavoriteRepository favoriteRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository,  CartRepository cartRepository, FavoriteRepository favoriteRepository) {
         this.userRepository = userRepository;
+        this.cartRepository = cartRepository;
+        this.favoriteRepository = favoriteRepository;
     }
-
 
     public List<User> getUser(){
         return userRepository.findAll();
@@ -25,7 +32,9 @@ public class UserService {
     }
 
     public User addUser(User user){
-
+        Cart cart = new Cart();
+        cartRepository.save(cart);
+        user.setCart(cart);
         return userRepository.save(user);
     }
 
@@ -48,6 +57,11 @@ public class UserService {
             }
         }
 
+        public User getUserby(User user){
+        User user1 = userRepository.findById(user.getUser_id()).orElse(null);
+            System.out.println(user.getUser_id());
+        return user1;
+        }
     }
 
 

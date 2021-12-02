@@ -1,5 +1,9 @@
 package com.example.Online_store.Products;
 
+import com.example.Online_store.Cart.Cart;
+import com.example.Online_store.Favorite.Favorite;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +13,7 @@ import java.util.Collection;
 public class Products {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int product_id;
     private String title; //@Column(unique = true)
     private double price;
@@ -18,10 +22,20 @@ public class Products {
     private String image;
     private double rating;
 
+//    @ManyToOne
+//    @JoinColumn(name="cart_id")
+////    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    private Cart cart;
+
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "favorite_id")
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    private Favorite favorite;
+
     public Products() {
     }
 
-    public Products(int product_id, String title, double price, String description, int category_id, String image, double rating) {
+    public Products(int product_id, String title, double price, String description, int category_id, String image, double rating){//, //Favorite favorite) {
 
         this.product_id = product_id;
         this.title = title;
@@ -30,6 +44,8 @@ public class Products {
         this.category_id = category_id;
         this.image = image;
         this.rating = rating;
+//        this.cart = cart;
+//        this.favorite = favorite;
     }
 
     public int getProduct_id() {
@@ -87,6 +103,22 @@ public class Products {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+//    public Cart getCart() {
+//        return cart;
+//    }
+//
+//    public void setCart(Cart cart) {
+//        this.cart = cart;
+//    }
+
+//    public Favorite getFavorite() {
+//        return favorite;
+//    }
+//
+//    public void setFavorite(Favorite favorite) {
+//        this.favorite = favorite;
+//    }
 
     @Override
     public String toString() {
