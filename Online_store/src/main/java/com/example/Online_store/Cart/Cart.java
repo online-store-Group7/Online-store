@@ -19,9 +19,6 @@ public class Cart {
     @JoinColumn(name = "product_cart",referencedColumnName = "product_id")
     private List<Products> products = new ArrayList<>();
 
-//    @OneToOne
-//    private User user;
-
     public Cart() {
     }
 
@@ -32,16 +29,8 @@ public class Cart {
     public Cart(int Cart_id, List<Products> products) {
         this.Cart_id = Cart_id;
         this.products = products;
-//        this.user=user;
     }
 
-//    public User getUser() {
-//        return this.user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
     public int getCart_id() {
         return this.Cart_id;
     }

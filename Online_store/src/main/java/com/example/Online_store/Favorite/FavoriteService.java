@@ -31,17 +31,12 @@ public class FavoriteService {
     }
 
     public Favorite saveFavorite(Products products, User user){
-        Favorite favorite = favoriteRepository.getById(1);
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$"+user.getUser_id());
-//        System.out.println("£££££££££££££££££££££££"+cart.getCart_id());
-//        System.out.println(products.getProduct_id());
-        Products products1 = productsRepository.findById(products.getProduct_id()).orElse(null);
-//        System.out.println(products1);
-//        System.out.println(cart.getProducts());
-        favorite.getProducts().add(products1);
-        System.out.println(user.getUser_id());
-//        cart.setUser_id(userId);
-        return favoriteRepository.save(favorite);  }
+        User favorite_user = userRepository.findById(user.getUser_id()).orElse(null);
+        Favorite favorite = favorite_user.getFavorite();
+        Products added_product = productsRepository.findById(products.getProduct_id()).orElse(null);
+        favorite.getProducts().add(added_product);
+        return favoriteRepository.save(favorite);
+    }
 
     public void deleteFavorite(String id){
         int favorite_id = Integer.valueOf(id);

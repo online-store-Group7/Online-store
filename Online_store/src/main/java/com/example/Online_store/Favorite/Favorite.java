@@ -6,29 +6,24 @@ import com.example.Online_store.Users.User;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "favorite")
 public class Favorite {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int favorite_id;
 
     @ManyToMany
+    @JoinColumn(name = "product_favorite", referencedColumnName = "product_id")
     private List<Products> products = new ArrayList<>();
-
-    @OneToOne(mappedBy = "favorite", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
-    private User user;
 
     public Favorite() {
     }
 
-    public Favorite(int favorite_id, List<Products> products) {
+    public Favorite(int favorite_id) {
         this.favorite_id = favorite_id;
-        this.products = products;
     }
 
     public int getFavorite_id() {

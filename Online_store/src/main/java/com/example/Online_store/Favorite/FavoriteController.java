@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path= "favorite")
+@CrossOrigin("*")
 public class FavoriteController {
 
     private final FavoriteService favoriteService;
@@ -26,13 +27,28 @@ public class FavoriteController {
     }
 
     @PostMapping
-    public Favorite addFavorite(@RequestBody Products products, User user){
-        System.out.println(user.getUser_id());
-        return favoriteService.saveFavorite(products, user);}
+    public Favorite addFavorite(@RequestBody Form form){
+        System.out.println(form.getProduct());
+        System.out.println(form.getUser());
+
+        return favoriteService.saveFavorite(form.getProduct(), form.getUser());
+    }
 
     @DeleteMapping
     public void deleteFavorite(@PathVariable String id){
         favoriteService.deleteFavorite(id);
+    }
+}
+
+class Form{
+
+    Products product;
+    User user;
+
+    public Products getProduct(){ return product; }
+
+    public User getUser(){
+        return user;
     }
 }
 

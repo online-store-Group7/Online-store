@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e1dcc3-9785-49d8-823c-188fe8f40840" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Cart/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/Favorite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/FavoriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/FavoriteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/FavoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Favorite/FavoriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/OnlineStoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/OnlineStoreApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Products/ProductsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/java/com/example/Online_store/Users/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online_store/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Online_store/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

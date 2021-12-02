@@ -35,6 +35,11 @@ public class UserService {
         Cart cart = new Cart();
         cartRepository.save(cart);
         user.setCart(cart);
+
+        Favorite favorite = new Favorite();
+        favoriteRepository.save(favorite);
+        user.setFavorite(favorite);
+
         return userRepository.save(user);
     }
 

@@ -22,16 +22,6 @@ public class Products {
     private String image;
     private double rating;
 
-//    @ManyToOne
-//    @JoinColumn(name="cart_id")
-////    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    private Cart cart;
-
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "favorite_id")
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    private Favorite favorite;
-
     public Products() {
     }
 
@@ -44,8 +34,6 @@ public class Products {
         this.category_id = category_id;
         this.image = image;
         this.rating = rating;
-//        this.cart = cart;
-//        this.favorite = favorite;
     }
 
     public int getProduct_id() {

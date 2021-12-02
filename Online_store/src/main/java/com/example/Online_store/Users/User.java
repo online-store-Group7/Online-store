@@ -21,7 +21,7 @@ public class User {
     @OneToOne
     private Cart cart;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne
     private Favorite favorite;
 
     public User() {
@@ -82,4 +82,14 @@ public class User {
     public void setCart(Cart cart) {
         this.cart = cart;
     }
+
+    public Favorite getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
+    }
 }
+
+
