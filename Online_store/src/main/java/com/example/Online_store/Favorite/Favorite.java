@@ -1,23 +1,29 @@
 package com.example.Online_store.Favorite;
 
+import com.example.Online_store.Products.Products;
+import com.example.Online_store.Users.User;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "favorite")
 public class Favorite {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int favorite_id;
-    private int User_id;
-    private int Product_id;
+
+    @ManyToMany
+    @JoinColumn(name = "product_favorite", referencedColumnName = "product_id")
+    private List<Products> products = new ArrayList<>();
 
     public Favorite() {
     }
 
-    public Favorite(int favorite_id, int User_id, int Product_id) {
+    public Favorite(int favorite_id) {
         this.favorite_id = favorite_id;
-        this.User_id = User_id;
-        this.Product_id = Product_id;
     }
 
     public int getFavorite_id() {
@@ -28,28 +34,18 @@ public class Favorite {
         this.favorite_id = favorite_id;
     }
 
-    public int getUser_id() {
-        return User_id;
+    public List<Products> getProducts() {
+        return products;
     }
 
-    public void setUser_id(int user_id) {
-        User_id = user_id;
-    }
-
-    public int getProduct_id() {
-        return Product_id;
-    }
-
-    public void setProduct_id(int product_id) {
-        Product_id = product_id;
+    public void setProducts(List<Products> products) {
+        this.products = products;
     }
 
     @Override
     public String toString() {
         return "Favorite{" +
                 "favorite_id=" + favorite_id +
-                ", User_id=" + User_id +
-                ", Product_id=" + Product_id +
                 '}';
     }
 }

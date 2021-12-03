@@ -1,5 +1,6 @@
 package com.example.Online_store;
 
+import com.example.Online_store.Cart.Cart;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,5 +1,8 @@
 package com.example.Online_store.Cart;
 
+import com.example.Online_store.Products.Products;
+import com.example.Online_store.Products.ProductsRepository;
+import com.example.Online_store.Users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,12 +10,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path="cart")
-public class CartConroller {
+@CrossOrigin("*")
+public class CartController {
 
     private final CartService cartService;
 
     @Autowired
-    public CartConroller(CartService cartService) {
+    public CartController(CartService cartService) {
         this.cartService = cartService;
     }
 
@@ -27,10 +31,26 @@ public class CartConroller {
     }
 
     @PostMapping
-    public Cart addCart(@RequestBody Cart cart){ return cartService.addCart(cart);}
+    public Cart addCart(@RequestBody Form form){
+
+       return cartService.saveCart(form.getProduct(), form.getUser());
+    }
 
     @DeleteMapping("/{id}")
     public void deleteCart(@PathVariable String id){
         cartService.deleteCart(id);
+    }
+}
+
+class Form{
+    Products product;
+    User user;
+
+    public Products getProduct() {
+        return product;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

@@ -29,6 +29,11 @@ public class UserController {
          userService.addUser(user);
     }
 
+    @GetMapping("/use")
+    public User getUsersby(@RequestBody User user){
+        return userService.getUserby(user);
+    }
+
 
 
     @GetMapping("/{id}")
