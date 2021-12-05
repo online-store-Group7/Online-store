@@ -1,27 +1,99 @@
+/* Cart Styling Start */
+.parent {
+    display: grid;
+    justify-content: center;
+    margin: 10% 0;
+  }
+
+#heading {
+    font-size: 16px;
+    margin: 5px;
+  }
+
+.summary_card {
+    background-color: #fff;
+    width: 750px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+.buttons-cart {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+  }
+
+#cartbtn {
+    background-color: #000000;
+    color: #ffffff;
+    width: 195px;
+    padding: 6px;
+    justify-self: center;
+    border-radius: 6px;
+    border: 0px;
+    align-self: center;
+  }
+
+.item-cart {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 240px auto;
+  }
+
+.price-left {
+    justify-self: end;
+  }
+
+/* Cart Styling End */
+
+/* Favorite Styling Start */
+
+.root {
+  display: grid;
+  justify-content: center;
+  margin: 10% 0;
+}
+
+#header {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.summary_favorite {
+  background-color: #fff;
+  width: 750px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Favorite Styling End */
+
 .p_Users{
-    border-top: 2px solid black;
-    text-align: center;
+  border-top: 2px solid black;
+  text-align: center;
 }
 .p2_Users{
-    text-align: center;
+  text-align: center;
 }
 
 .div_Users{
-    border: 5px solid black;
-    margin: 4%;
-    border-radius: 10px 10px 10px 10px;
+  border: 5px solid black;
+  margin: 4%;
+  border-radius: 10px 10px 10px 10px;
 }
 .h1_h{
-    text-align: center;
-    margin: 4%;
+  text-align: center;
+  margin: 4%;
 
 }
 .btn{
-    width: 100%;
-    border-radius: 0px 0px 0px 0px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+  width: 100%;
+  border-radius: 0px 0px 0px 0px;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 .form_add_user{
-    margin: 3%;
+  margin: 3%;
 }
