@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "orders")
+@CrossOrigin("*")
 public class OrdersController {
 
     private final OrderService orderService;

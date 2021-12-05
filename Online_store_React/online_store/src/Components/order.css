@@ -1,0 +1,40 @@
+.order-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 8px;
+}
+.order-container h1{
+    text-align: center;
+}
+.order-text{
+    font-size: 15px;
+    font-weight: normal;
+}
+.order-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-top h4{
+    margin-top: 0;
+}
+.order-bottom{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin-top: 10px;
+}
+.left-side{
+    margin-left: 10%;
+    width: 25%;
+}
+.right-side{
+    width: 100%;
+}
