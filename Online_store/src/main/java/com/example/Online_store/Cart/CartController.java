@@ -33,7 +33,7 @@ public class CartController {
     @PostMapping
     public Cart addCart(@RequestBody Form form){
 
-       return cartService.saveCart(form.getProduct(), form.getUser());
+       return cartService.saveCart(form.getCart(), form.getProduct_id(), form.getUser_id());
     }
 
     @DeleteMapping("/{id}")
@@ -43,14 +43,20 @@ public class CartController {
 }
 
 class Form{
-    Products product;
-    User user;
+    private Cart cart;
+    private int product_id;
+    private int user_id;
 
-    public Products getProduct() {
-        return product;
+    public Cart getCart() {
+        return cart;
     }
 
-    public User getUser() {
-        return user;
+    public int getProduct_id() {
+        return product_id;
     }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
 }

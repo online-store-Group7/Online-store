@@ -12,23 +12,19 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int User_id;
     private String UserName;
     private String Email;
     private int Phone;
     private String Password;
 
-    @OneToOne
-    private Cart cart;
 
-    @OneToOne
-    private Favorite favorite;
 
     public User() {
     }
 
-    public User(int id, String userName, String email, int phone, String password) {
-        this.id = id;
+    public User(int User_id, String userName, String email, int phone, String password) {
+        this.User_id = User_id;
         this.UserName = userName;
         this.Email = email;
         this.Phone = phone;
@@ -36,11 +32,11 @@ public class User {
     }
 
     public int getUser_id() {
-        return this.id;
+        return this.User_id;
     }
 
     public void setUser_id(int id) {
-        this.id = id;
+        this.User_id = User_id;
     }
 
     public String getUserName() {
@@ -75,21 +71,6 @@ public class User {
         this.Password = password;
     }
 
-    public Cart getCart() {
-        return this.cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public Favorite getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(Favorite favorite) {
-        this.favorite = favorite;
-    }
 }
 
 

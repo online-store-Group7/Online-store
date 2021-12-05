@@ -32,13 +32,6 @@ public class UserService {
     }
 
     public User addUser(User user){
-        Cart cart = new Cart();
-        cartRepository.save(cart);
-        user.setCart(cart);
-
-        Favorite favorite = new Favorite();
-        favoriteRepository.save(favorite);
-        user.setFavorite(favorite);
 
         return userRepository.save(user);
     }
@@ -62,7 +55,7 @@ public class UserService {
             }
         }
 
-        public User getUserby(User user){
+        public User getUserbyId(User user){
         User user1 = userRepository.findById(user.getUser_id()).orElse(null);
             System.out.println(user.getUser_id());
         return user1;

@@ -30,11 +30,11 @@ public class FavoriteService {
         return favoriteRepository.findById(favorite_id).orElse(null);
     }
 
-    public Favorite saveFavorite(Products products, User user){
-        User favorite_user = userRepository.findById(user.getUser_id()).orElse(null);
-        Favorite favorite = favorite_user.getFavorite();
-        Products added_product = productsRepository.findById(products.getProduct_id()).orElse(null);
-        favorite.getProducts().add(added_product);
+    public Favorite saveFavorite(Favorite favorite, int products_id, int user_id){
+        User favorite_user = userRepository.findById(user_id).orElse(null);
+        favorite.setUser(favorite_user);
+        Products added_product = productsRepository.findById(products_id).orElse(null);
+        favorite.setProducts(added_product);
         return favoriteRepository.save(favorite);
     }
 
