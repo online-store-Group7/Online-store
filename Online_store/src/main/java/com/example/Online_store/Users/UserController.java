@@ -31,7 +31,7 @@ public class UserController {
 
     @GetMapping("/use")
     public User getUsersby(@RequestBody User user){
-        return userService.getUserby(user);
+        return userService.getUserbyId(user);
     }
 
 

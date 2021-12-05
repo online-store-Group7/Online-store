@@ -28,13 +28,11 @@ public class FavoriteController {
 
     @PostMapping
     public Favorite addFavorite(@RequestBody Form form){
-        System.out.println(form.getProduct());
-        System.out.println(form.getUser());
 
-        return favoriteService.saveFavorite(form.getProduct(), form.getUser());
+        return favoriteService.saveFavorite(form.getFavorite(), form.getProduct_id(), form.getUser_id());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteFavorite(@PathVariable String id){
         favoriteService.deleteFavorite(id);
     }
@@ -42,13 +40,32 @@ public class FavoriteController {
 
 class Form{
 
-    Products product;
-    User user;
+    private Favorite favorite;
+    private int product_id;
+    private int user_id;
 
-    public Products getProduct(){ return product; }
+    public Favorite getFavorite() {
+        return favorite;
+    }
 
-    public User getUser(){
-        return user;
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
+    }
+
+    public int getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }
 

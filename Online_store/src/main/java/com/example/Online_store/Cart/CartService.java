@@ -35,11 +35,11 @@ public class CartService {
         cartRepository.deleteById(cart_id);
     }
 
-    public Cart saveCart(Products product, User user){
-        User cart_user = userRepository.findById(user.getUser_id()).orElse(null);
-        Cart cart = cart_user.getCart();
-        Products added_product = productsRepository.findById(product.getProduct_id()).orElse(null);
-        cart.getProducts().add(added_product);
+    public Cart saveCart(Cart cart , int product_id, int user_id){
+        User cart_user = userRepository.findById(user_id).orElse(null);
+        cart.setUser(cart_user);
+        Products added_product = productsRepository.findById(product_id).orElse(null);
+        cart.setProducts(added_product);
         return cartRepository.save(cart);
       }
 }
