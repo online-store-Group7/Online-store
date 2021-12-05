@@ -30,7 +30,7 @@ function Users() {
     <div>
 
         <h1 className="h1_h">Users</h1>
-        <a href="/add_user"><button type="button" class="btn btn-secondary">Add New user</button></a>
+        <a href="/add_user"><button type="button" className="btn btn-secondary">Add New user</button></a>
 
 {  users === undefined ? '' :
           
@@ -43,13 +43,13 @@ function Users() {
             <p className="p_Users"><b>Phone:</b> {element.phone}</p>
             <p className="p_Users"><b>Password:</b> {element.password}</p>
 
-            <input type="button" value="Update" class="btn btn-primary" onClick={ () => {
+            <input type="button" value="Update" className="btn btn-primary" onClick={ () => {
                       navigate(`/update_user/${element.user_id}`)
 
             }}  /> 
 
 
-            <input type="button" value="Delete" class="btn btn-danger" onClick={ () => {
+            <input type="button" value="Delete" className="btn btn-danger" onClick={ () => {
     axios.delete(`http://localhost:8080/users/${element.user_id}`).then(response => {
       console.log(response);
     });

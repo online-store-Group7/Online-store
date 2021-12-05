@@ -20,38 +20,38 @@ function Add_Reviews() {
 
 
         <form className="form_add_user">
-        <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">User ID</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
+        <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">User ID</label>
+    <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
         (e)=>{
             setUserId(e.target.value)
         }
     } />
   </div>
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Product ID</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Product ID</label>
+    <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
         (e)=>{
             setProductId(e.target.value)
         }} />
   </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Comment</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Comment</label>
+    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={
         (e)=>{
             setComment(e.target.value)
         }} />
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Rating</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" onChange={
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">Rating</label>
+    <input type="number" className="form-control" id="exampleInputPassword1" onChange={
         (e)=>{
             setRating(e.target.value)
         }} />
   </div>
 
-  <button type="button" class="btn btn-primary" onClick={
+  <button type="button" className="btn btn-primary" onClick={
       ()=>{
         const reviews = {
      "a":{

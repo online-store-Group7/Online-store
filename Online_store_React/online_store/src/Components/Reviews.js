@@ -25,7 +25,7 @@ function Reviews() {
 
     <div>
     <h1 className="h1_h">Reviews</h1>
-    <a href="/add_reviews"><button type="button" class="btn btn-secondary">Add New Reviews</button></a>
+    <a href="/add_reviews"><button type="button" className="btn btn-secondary">Add New Reviews</button></a>
 
 {  reviews === undefined ? '' :
           
@@ -38,7 +38,7 @@ reviews.map((element, index) => {
             <p className="p_Users"><b>Comment:</b> {element.comment}</p>
             <p className="p_Users"><b>date:</b> {element.date}</p>
             <p className="p_Users"><b>Rating:</b> {element.rating}</p>
-            <input type="button" value="Delete" class="btn btn-danger" onClick={ () => {
+            <input type="button" value="Delete" className="btn btn-danger" onClick={ () => {
     axios.delete(`http://localhost:8080/reviews/${element.comment_id}`).then(response => {
       console.log(response);
     });
