@@ -1,4 +1,3 @@
-
 /* Cart Styling Start */
 .parent {
     display: grid;
@@ -24,14 +23,42 @@
 /* Favorite Styling Start */
 
 .root {
-    display: grid;
-    justify-content: center;
-    margin: 10% 0;
+  display: grid;
+  justify-content: center;
+  margin: 10% 0;
 }
 
 #header {
-    font-size: 16px;
-    margin: 5px;
-  }
+  font-size: 16px;
+  margin: 5px;
+}
 
 /* Favorite Styling End */
+
+.p_Users{
+  border-top: 2px solid black;
+  text-align: center;
+}
+.p2_Users{
+  text-align: center;
+}
+
+.div_Users{
+  border: 5px solid black;
+  margin: 4%;
+  border-radius: 10px 10px 10px 10px;
+}
+.h1_h{
+  text-align: center;
+  margin: 4%;
+
+}
+.btn{
+  width: 100%;
+  border-radius: 0px 0px 0px 0px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.form_add_user{
+  margin: 3%;
+}
