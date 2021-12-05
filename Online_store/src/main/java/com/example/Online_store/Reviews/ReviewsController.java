@@ -6,6 +6,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path= "reviews")
+@CrossOrigin("*")
 public class ReviewsController {
 
     private final ReviewsService reviewsService;
