@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function Favorite() {
 
-    const [favorite, setFavorite] = useState();
+    const [favorite, setFavorite] = useState([]);
 
     useEffect(() => {
         axios
@@ -14,10 +14,18 @@ function Favorite() {
 
     return (
         <>
-        <div class="parent">
-            <h1 id="heading">Favorite List</h1>
-            <div class="summary_card">
-                
+        <div class="root">
+            <h1 id="header">Favorite List</h1>
+            <div class="summary_favorite">
+                {cart.map(e => {
+                    <div className="item-cart">
+                        <h4>{e.title}</h4>
+
+                        <h4 className="price-left">
+                            {e.price}
+                        </h4>
+                    </div>
+                })}
             </div>
         </div>
 
