@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function Favorite() {
 
@@ -8,7 +9,7 @@ function Favorite() {
     useEffect(() => {
         axios
         .get("http://localhost:8080/favorite")
-        .then((response) => setFavorite(response.data.items))
+        .then((response) => setFavorite(response.data))
         .catch((error) => console.log(error))
       },[])
 
@@ -17,7 +18,7 @@ function Favorite() {
         <div class="root">
             <h1 id="header">Favorite List</h1>
             <div class="summary_favorite">
-                {cart.map(e => {
+                {favorite.map(e => {
                     <div className="item-cart">
                         <h4>{e.title}</h4>
 

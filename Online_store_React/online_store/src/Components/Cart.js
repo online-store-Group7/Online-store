@@ -9,7 +9,7 @@ function Cart() {
     useEffect(() => {
         axios
         .get("http://localhost:8080/cart")
-        .then((response) => setCart(response.data.items))
+        .then((response) => setCart(response.data))
         .catch((error) => console.log(error))
         console.log(response);
       },[])
@@ -18,7 +18,7 @@ function Cart() {
     const confermOrder = (e) => {
         axios
         .post("http://localhost:8080/orders")
-        .then((response) => setCart(response.data.items))
+        .then((response) => setCart(response.data))
         .catch((error) => console.log(error))
         console.log(response);
     }
