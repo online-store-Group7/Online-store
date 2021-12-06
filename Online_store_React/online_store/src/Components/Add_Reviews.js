@@ -4,10 +4,10 @@ import '../App.css';
 
 function Add_Reviews() {
 
-  const [userId, setUserId] = useState();
-  const [productId, setProductId] = useState();
-  const [comment, setComment] = useState();
-  const [rating, setRating] = useState();
+  const [userId, setUserId] = useState(2);
+  const [productId, setProductId] = useState(1);
+  const [comment, setComment] = useState("s");
+  const [rating, setRating] = useState(1);
 
 
 
@@ -62,7 +62,7 @@ function Add_Reviews() {
     "user_id":userId
  };
     axios.post(`http://localhost:8080/reviews`, reviews)
-        .then(response => {});
+        .then(response => {console.log(response)});
         window.location.href = "http://localhost:3000/reviews"; 
  }
     }>Submit</button>
