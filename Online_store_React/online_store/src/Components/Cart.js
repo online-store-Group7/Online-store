@@ -46,15 +46,17 @@ function Cart() {
         <>
         {  cart === undefined ? '' :
         <div className="parent">
-            <h1 id="heading">Order Summary</h1>
+            <h1 className = "cart-text">Order Summary<hr/></h1>
             <div className="summary_card">
                 {cart.map((element, index) => {
                     return(
                         <div key={index}>
                     <div className="item-cart">
+                    <img src = {element.products.image} height = "150" width = "110"/>
                         <h4>{element.products.title}</h4>
                         <h4 className="price-left">
                             {element.products.price}
+                            <small>/SR</small>
                         </h4>
                     </div>
                     <div className="buttons-cart">
