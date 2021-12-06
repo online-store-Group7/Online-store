@@ -26,6 +26,7 @@ function Orders() {
                     <h5>User Name: <span className="order-text">{element.user.userName}</span></h5>
                     <h5>Order Date: <span className="order-text">{element.date}</span><hr/></h5>
             
+                    <h5>Order Date: <span className="order-text">{element.date}</span></h5>
                 </div>
                 <div className="order-bottom">
                     <div className="left-side">
