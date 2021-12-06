@@ -32,7 +32,8 @@ function Products(){
             .catch((err) => {
             console.log(err);
             });
-            // navigate("/favorite")
+            navigate("/favorite")
+
         }
 
         function addToCart(data){
@@ -48,15 +49,15 @@ function Products(){
             .catch((err) => {
             console.log(err);
             });
-            // navigate("/cart")
+            navigate("/cart")
         }
     return (
         <>
         <h1 className = "product-text">Products<hr/></h1>
         <div className = "card-container">
-        {products.map((element) => {
+        {products.map((element, index) => {
             return (
-                <div className = "card">
+                <div key={index} className = "card">
                     <div className = "card-top">
                         <img src = {element.image} height = "200px" width = "130px"/>
                     </div>

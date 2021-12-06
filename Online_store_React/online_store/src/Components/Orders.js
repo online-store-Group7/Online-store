@@ -18,9 +18,9 @@ function Orders() {
         }, []);
     return (
       <>
-        {order.map((element) => {
+        {order.map((element, index) => {
             return (
-            <div className="order-container">
+            <div key={index} className="order-container">
                 <h1>Orders<hr/></h1>
                 <div className="order-top">
                     <h5>User Name: <span className="order-text">{element.user.userName}</span></h5>

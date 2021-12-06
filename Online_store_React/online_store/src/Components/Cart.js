@@ -1,54 +1,79 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import '../App.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import '../App.css';
 
-// function Cart() {
+function Cart() {
 
-//     const [cart, setCart] = useState([]);
 
-//     useEffect(() => {
-//         axios
-//         .get("http://localhost:8080/cart")
-//         .then((response) => setCart(response.data))
-        
-//         .catch((error) => console.log(error))
-//       },[])
+    const [cart, setCart] = useState([]);
+    const navigate = useNavigate();
 
-    
-//     const confermOrder = (e) => {
-//         axios
-//         .post("http://localhost:8080/orders")
-//         .then((response) => setCart(response.data))
-//         .catch((error) => console.log(error))
-//     }
 
-//     return (
-//         <>
-//         {/* {console.log(cart)} */}
-//         {  cart === undefined ? '' :
-//         <div class="parent">
-//             <h1 id="heading">Order Summary</h1>
-//             <div class="summary_card">
-//                 {cart.map(e => {
-//                     <div className="item-cart">
-//                         <h4>{e.title}</h4>
+    useEffect(() => {
+      axios
+      .get("http://localhost:8080/cart")
+      .then((response) => {
+          console.log(response.data)
+          setCart(response.data)
+      })
+      .catch((err) => {
+      console.log(err);
+      });
+      }, []);
 
-//                         <h4 className="price-left">
-//                             {e.price}
-//                         </h4>
-//                     </div>
-//                 })}
+      const confirmOrder = (data) => {
+        axios
+            .post("http://localhost:8080/orders", { 
+                "orders": 
+                    {
+                        "date": "2021-12-3"
+                    },
+                "product_id": data.products.product_id,
+                "user_id":2
+            })
+            .then((response) => {
+            console.log(response)
+            })
+            .catch((err) => {
+            console.log(err);
+            });
+            navigate("/orders")
+    }
 
-//                <div className="buttons-cart">
-//                    <button type="button" id="cartbtn" onClick={()=>confermOrder()}>
-//                            Confirm order
-//                    </button>
-//                </div>
-//             </div>
-//         </div>
-//         }
-//         </>
-//     )
-// }
+    return (
+        <>
+        {  cart === undefined ? '' :
+        <div className="parent">
+            <h1 id="heading">Order Summary</h1>
+            <div className="summary_card">
+                {cart.map((element, index) => {
+                    return(
+                        <div key={index}>
+                    <div className="item-cart">
+                        <h4>{element.products.title}</h4>
+                        <h4 className="price-left">
+                            {element.products.price}
+                        </h4>
+                    </div>
+                    <div className="buttons-cart">
+                   <button type="button" id="cartbtn" onClick={()=>confirmOrder(element)}>
+                           Confirm order
+                   </button>
+                    </div>
+                    </div>
+                    )
 
-// export default Cart;
+                })}
+               {/* <div className="buttons-cart">
+                   <button type="button" id="cartbtn" onClick={()=>confirmOrder(element)}>
+                           Confirm order
+                   </button>
+               </div> */}
+            </div>
+        </div>
+        }
+        </>
+    )
+}
+export default Cart; 

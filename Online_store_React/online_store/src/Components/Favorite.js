@@ -1,36 +1,46 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-// function Favorite() {
+function Favorite() {
 
-//     const [favorite, setFavorite] = useState([]);
+    const [favorite, setFavorite] = useState([]);
 
-//     useEffect(() => {
-//         axios
-//         .get("http://localhost:8080/favorite")
-//         .then((response) => setFavorite(response.data))
-//         .catch((error) => console.log(error))
-//       },[])
 
-//     return (
-//         <>
-//         <div class="root">
-//             <h1 id="header">Favorite List</h1>
-//             <div class="summary_favorite">
-//             {favorite.map(e => {
-//                     <div className="item-cart">
-//                         <h4>{e.title}</h4>
+      useEffect(() => {
+        axios.all([
+          axios.get('http://localhost:8080/favorite')
+        ])
+        .then(r => {
+            setFavorite(r[0].data);
+           });
+      
+          }
+      
+      ,[]);
 
-//                         <h4 className="price-left">
-//                             {e.price}
-//                         </h4>
-//                     </div>
-//                 })}
-//             </div>
-//         </div>
+    return (
+        <>
+        <div className="root">
+            <h1 className="h1_h">Favorite List</h1>
+            <div className="summary_favorite">
+    
+            {  favorite === undefined ? '' :
+            favorite.map((e,index) => {
+                return (
+                    <div key={index} className="div_Users">
+                        <h4 className="h1_h">{e.products.title}</h4>
+                        <hr/>
+                        <h4 className="h1_h">
+                            {e.products.description}
+                        </h4>
+                    </div>
+            )})}
+            </div>
+            
+        </div>
 
-//         </>
-//     )
-// }
+        </>
+    )
+}
 
-// export default Favorite;
+export default Favorite;

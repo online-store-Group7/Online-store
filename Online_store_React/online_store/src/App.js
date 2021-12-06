@@ -7,6 +7,8 @@ import Update_User from './Components/Update_User'
 import Add_Reviews from './Components/Add_Reviews'
 import Products from './Components/Products'
 import Orders from './Components/Orders';
+import Favorite from './Components/Favorite';
+import Cart from './Components/Cart';
 
 function App() {
   return (
@@ -20,11 +22,11 @@ function App() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <a className="nav-link active text-white" aria-current="page" href="users">Users</a>
-        <a className="nav-link text-white" href="reviews">Reviews</a>
-        <a className="nav-link text-white" href="#">Cart</a>
-        <a className="nav-link text-white" href="orders" tabIndex="-1" aria-disabled="true">Orders</a>
-        <a className="nav-link text-white" href="#" tabIndex="-1" aria-disabled="true">Favorite</a>
+        <a className="nav-link active text-white" aria-current="page" href="/users">Users</a>
+        <a className="nav-link text-white" href="/reviews">Reviews</a>
+        <a className="nav-link text-white" href="/cart">Cart</a>
+        <a className="nav-link text-white" href="/orders" tabIndex="-1" aria-disabled="true">Orders</a>
+        <a className="nav-link text-white" href="/favorite" tabIndex="-1" aria-disabled="true">Favorite</a>
       </div>
     </div>
   </div>
@@ -39,6 +41,8 @@ function App() {
           <Route path="/add_reviews"  element={<Add_Reviews />} />
           <Route path="/products"  element={<Products />} />
           <Route path="/orders"  element={<Orders />} />
+          <Route path="/favorite"  element={<Favorite />} />
+          <Route path="/cart"  element={<Cart />} />
         
 
       </Routes>
