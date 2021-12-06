@@ -64,9 +64,12 @@ function Products(){
                     <div className = "card-bottom">
                         <h4>{element.title}</h4>
                         <h4 className = "price-text">{element.price} <small>/SR</small></h4>
-                        <button className = "btn btn-secondary" onClick = {() => {addToFavorite(element)}}>Add to Favorite</button>
-                        <button className = "btn btn-warning" onClick = {() => {addToCart(element)}}>Add to cart</button>
-                    </div>
+                        <button type="button" id="fav-btn" onClick = {() => {addToFavorite(element)}}>
+                            Add to Favorite
+                        </button>
+                        <button type="button" id="cart-btn" onClick = {() => {addToCart(element)}}>
+                            Add to cart
+                        </button>  </div>
                 </div>)
         })}
         </div>
