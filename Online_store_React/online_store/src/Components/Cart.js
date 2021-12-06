@@ -23,11 +23,12 @@ function Cart() {
       }, []);
 
       const confirmOrder = (data) => {
+        const d = new Date().toISOString().split('T')[0];
         axios
             .post("http://localhost:8080/orders", { 
                 "orders": 
                     {
-                        "date": "2021-12-3"
+                        "date": d
                     },
                 "product_id": data.products.product_id,
                 "user_id":2
