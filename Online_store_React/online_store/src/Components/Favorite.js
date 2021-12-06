@@ -36,13 +36,6 @@ function Favorite() {
                         <h4 className = "price-text">{e.products.price} <small>/SR</small></h4>
                     </div>
                 </div>
-                    <div key={index} className="div_Users">
-                        <h4 className="h1_h">{e.products.title}</h4>
-                        <hr/>
-                        <h4 className="h1_h">
-                            {e.products.description}
-                        </h4>
-                    </div>
             )})}
             </div>
             
